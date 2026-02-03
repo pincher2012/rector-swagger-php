@@ -1,0 +1,38 @@
+{
+    "name": "pincher2012/rector-swagger-php",
+    "description": "Replace openapi annotations to attributes",
+    "type": "rector-extension",
+    "keywords": ["rector", "openapi", "swagger", "annotations", "attributes"],
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "rector/rector": "^2.3.5",
+        "phpunit/phpunit": "^12.5.8",
+        "friendsofphp/php-cs-fixer": "^3.93.1",
+        "phpstan/phpstan": "^2.1.38"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Rector\\OpenApi\\": ["src/", "rules/"]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rector\\OpenApi\\Tests\\": ["tests/", "rules-tests/"]
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "format": "vendor/bin/php-cs-fixer fix",
+        "phpstan": "vendor/bin/phpstan analyse"
+    },
+    "authors": [
+        {
+            "name": "Aleksandr Busygin",
+            "email": "pincher2012@yandex.ru"
+        }
+    ],
+    "minimum-stability": "stable"
+}
