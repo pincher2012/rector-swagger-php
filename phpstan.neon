@@ -1,7 +1,5 @@
 parameters:
-  level: 9
+  level: max
   paths:
-    - src
     - rules
-    - tests
     - rules-tests
