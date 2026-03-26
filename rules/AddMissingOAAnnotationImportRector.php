@@ -13,6 +13,7 @@ use PhpParser\Node\Stmt\ClassMethod;
 use PhpParser\Node\Stmt\Function_;
 use PhpParser\Node\Stmt\Interface_;
 use PhpParser\Node\Stmt\Property;
+use PhpParser\Node\Stmt\Trait_;
 use PhpParser\Node\Stmt\UseUse;
 use PHPStan\PhpDocParser\Ast\PhpDoc\PhpDocTagNode;
 use Rector\BetterPhpDocParser\PhpDoc\DoctrineAnnotationTagValueNode;
@@ -58,11 +59,11 @@ class AddMissingOAAnnotationImportRector extends AbstractRector
      */
     public function getNodeTypes(): array
     {
-        return [Class_::class, Property::class, Param::class, ClassMethod::class, Function_::class, Closure::class, ArrowFunction::class, Interface_::class];
+        return [Class_::class, Property::class, Param::class, ClassMethod::class, Function_::class, Closure::class, ArrowFunction::class, Interface_::class, Trait_::class];
     }
 
     /**
-     * @phpstan-param Class_|Property|Param|ClassMethod|Function_|Closure|ArrowFunction|Interface_ $node
+     * @phpstan-param Class_|Property|Param|ClassMethod|Function_|Closure|ArrowFunction|Interface_|Trait_ $node
      */
     public function refactor(Node $node): ?Node
     {
